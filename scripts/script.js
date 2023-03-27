@@ -1,7 +1,22 @@
-var page1 = document.classSelector(".page1");
+var startBtn = document.querySelector("#start")
+var timerEl = document.querySelector("#timer")
+var outOfTime = false;
 
 function startQuiz(){
-    page1.style.display = hidden;
+    
 }
 
-document.getElementById("#start").addEventListener("click", startQuiz()); 
+function startTimer(){
+    var timerCount = 60;
+    var timerInterval = setInterval(function () {
+        timerCount--;
+        timerEl.textContent="Time: "+timerCount;
+        if(timerCount === 0){
+            clearInterval(timerInterval);
+            timerEl.textContent= "Time: 0"
+            outOfTime = true;
+        }
+    }, 1000);
+}
+
+startBtn.addEventListener("click", startQuiz()); 
