@@ -65,29 +65,19 @@ var questionsArray = [
 
 //Main method, runs when start button is pushed
 function startQuiz(){
-    generateOrder();
+    //generateOrder();
 
     document.getElementById("page1").style.display = "none";
     document.getElementById("page2").style.display = "block";
 
     document.querySelector("#question-counter").textContent = "Questions Remaining: "+questionNumber+"/10";
     startTimer();
+
 }
 
 //Generates a random number between 0 and maxVal
 function generateRand(maxVal){
     Math.floor(Math.random()*maxVal);
-}
-
-//Creates a random question order, genrating numbers between 0-9 then pushing them to an array.
-//This array will be used to decide the order which questions are shown in.
-function generateOrder(){
-    while(questionOrder.length()<10){
-        var random = generateRand(10);
-        if(!questionOrder.includes(random)){
-            questionOrder.push(random);
-        }
-    }
 }
 
 function generateQuestion(index){
