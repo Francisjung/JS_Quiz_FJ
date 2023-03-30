@@ -109,6 +109,9 @@ function startTimer(){
         timerEl.textContent="Time: "+timerCount;
 
         if(timerCount <= 0||questionNumber>10){
+            if(timerCount<0){
+                timerCount = 0;
+            }
             clearInterval(timerInterval);
             document.getElementById("page2").style.display = "none";
             document.getElementById("page3").style.display = "block";
