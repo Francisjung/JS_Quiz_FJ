@@ -1,5 +1,8 @@
 #page1{
     display: block;
+    width: 100%;
+    text-align: center;
+    margin: auto;
 }
 #page2{
     display: none;
@@ -9,4 +12,7 @@
 }
 #page4{
     display: none;
+}
+li:hover{
+    cursor:pointer;
 }
