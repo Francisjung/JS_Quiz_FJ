@@ -12,6 +12,9 @@ var questionNumber = 1;
 var timerCount = 60;
 var numCorrect =0;
 var outOfTime = false;
+var lastquestion;
+var scores = [];
+var storedScores = JSON.parse(localStorage.getItem("scores"));
 
 //An array which holds 10 objects, each representing a question in  our quiz.
 var questionsArray = [
@@ -96,7 +99,17 @@ function generateQuestion(index){
         }else{
             document.querySelector("#answer"+i).textContent=questionsArray[index].answers[i];
     }
-}
+    }
+    console.log("Last question = "+lastquestion)
+        if(lastquestion!=null){
+            if(lastquestion){
+                document.querySelector("#last-question").textContent = "Correct :D"
+                document.getElementById("last-question").style.color = "green";
+            }else{
+                document.querySelector("#last-question").textContent = "Incorrect :("
+                document.getElementById("last-question").style.color = "red";
+            }
+    }
 }
 
 //Starts a 60 second timer which ticks down once a second. 
@@ -135,14 +148,19 @@ document.querySelectorAll("ul#answer-list li").forEach((item) => {
     })
 });
 
+document.querySelector("#play-again").addEventListener("click", function(){playAgain()});
+
+
 function isCorrect(string){
     if(string == questionsArray[questionNumber-1].correctAnswer){
         console.log("true");
         numCorrect++;
+        lastquestion = true;
         return true;
     }else{
         console.log("false");
         timerCount-=10;
+        lastquestion = false;
         return false;
     }
 }
@@ -155,18 +173,36 @@ function nextQuestion(){
 }
 
 function calculateScore(){
-    return numCorrect+timerCount;
+    return numCorrect+ Math.floor(timerCount/10);
 }
 
 function resultScreen(){
     document.querySelector("#time-remaining").textContent = "Time Remaining: "+timerCount;
     document.querySelector("#num-correct").textContent = "Correct Answers: "+numCorrect+"/10";
+    document.querySelector("#time-bonus").textContent = "Time Bonus: "+ Math.floor(timerCount/10);
     document.querySelector("#score").textContent = "Final Score: "+calculateScore();
+    var initials = document.getElementById("initials").value;
+    scores.push(initials+": "+calculateScore());
+    localStorage.setItem("scores", JSON.stringify(scores));
 }
 
 function showLeaderboards(){
 
     document.getElementById("page3").style.display = "none";
     document.getElementById("page4").style.display = "block";
-
+    for(var i=0; i<localStorage.getItem("scores").length; i++){
+        var newP = document.createElement("li");
+        document.querySelector("#highsores").appendChild(newP);
+        var scoreNode = document.createTextNode(localStorage.getItem("scores")[i]);
+        newP.appendChild(scoreNode);
+    }
+}
+function playAgain(){
+    questionNumber = 1;
+    timerCount = 60;
+    numCorrect =0;
+    lastquestion = null;
+    document.querySelector("#last-question").textContent = "";
+    document.getElementById("page4").style.display = "none";
+    startQuiz();
 }

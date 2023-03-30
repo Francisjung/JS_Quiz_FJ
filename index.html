@@ -24,23 +24,24 @@
         <li id="answer3"></li>
       </ul>
       <p id="question-counter"></p>
+      <p id="last-question"></p>
     </div>
     <div id="page3">
       <h1>Quiz Complete!</h1>
       <p id="time-remaining"></p>
       <p id="num-correct"></p>
+      <p id="time-bonus"></p>
       <p id="score"></p>
       <label for="Initials">Enter Your Initials:</label>
-      <input type="text" id="Initials" name="Name">
+      <input type="text" id="Initials" name="Name" maxlength="2">
       <button id="page3-button">See Leaderboards</button>
     </div>
     <div id="page4">
-      <table>
-        <tr>
-          <th>Initials</th>
-          <th>Score</th>
-        </tr>
-      </table>
+      <h1>Highscores</h1>
+        <ol id="highscores">
+
+        </ol>
+      <button id="play-again">Play Again?</button>
     </div>
 	  <script src="./scripts/script.js"></script>
   </body>
