@@ -3,11 +3,7 @@ var timerEl = document.querySelector("#timer")
 var answerList = document.querySelector("#answer-list")
 var question = document.querySelector("#question")
 var questionNum = document.querySelector("#question-num")
-/*var answer0 = document.querySelector("#answer1")
-var answer1 = document.querySelector("#answer2")
-var answer2 = document.querySelector("#answer3")
-var answer3 = document.querySelector("#answer4")
-*/
+var highscores = localStorage.getItem("highscores")
 var selectedAnswer;
 
 /*var questionCounter = document.querySelector("#question-counter")*/
@@ -124,6 +120,10 @@ function startTimer(){
 //Listens for the button element #start to be pressed.
 startBtn.addEventListener("click", function(){startQuiz()});
 
+document.querySelector("#page3-button").addEventListener("click", function(){
+    console.log("show leaderboards clicked")
+    showLeaderboards()});
+
 document.querySelectorAll("ul#answer-list li").forEach((item) => {
     item.addEventListener('click', (event) =>{
             event.preventDefault();
@@ -159,4 +159,11 @@ function resultScreen(){
     document.querySelector("#time-remaining").textContent = "Time Remaining: "+timerCount;
     document.querySelector("#num-correct").textContent = "Correct Answers: "+numCorrect+"/10";
     document.querySelector("#score").textContent = "Final Score: "+calculateScore();
+}
+
+function showLeaderboards(){
+
+    document.getElementById("page3").style.display = "none";
+    document.getElementById("page4").style.display = "block";
+
 }
