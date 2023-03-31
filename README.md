@@ -24,15 +24,15 @@ To start the quiz, go to (https://francisjung.github.io/JS_Quiz_FJ/) and click t
 
 When pressed the browser will dispaly a question, 4 answers, a timer, and a question counter.
 
-![Screenshot 2 of quiz](https://raw.githubusercontent.com/Francisjung/JS_Quiz_FJ/main/assets/h4-screenshot-2.PNG)
+![Screenshot 2 of quiz](https://raw.githubusercontent.com/Francisjung/JS_Quiz_FJ/main/assets/h4%20screenshot%202.PNG)
 
 After all questions are answered or the timer has run out, the quiz will show the player thier results.
 
-![Screenshot 3 of quiz](https://raw.githubusercontent.com/Francisjung/JS_Quiz_FJ/main/assets/h4-screenshot-3.PNG)
+![Screenshot 3 of quiz](https://raw.githubusercontent.com/Francisjung/JS_Quiz_FJ/main/assets/h4%20screenshot%203.PNG)
 
 When the player enters their initials and presses the view leaderboard button, a table with high scores will be displayed.
 
-![Screenshot 4 of quiz](https://raw.githubusercontent.com/Francisjung/JS_Quiz_FJ/main/assets/h4-screenshot-4.PNG)
+![Screenshot 4 of quiz](https://raw.githubusercontent.com/Francisjung/JS_Quiz_FJ/main/assets/h4%20screenshot%204.PNG)
 
 ## Credits
 
