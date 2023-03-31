@@ -1,4 +1,4 @@
-        # Assignment 4: JS Quiz
+# Assignment 4: JS Quiz
 
 ## Description
 
