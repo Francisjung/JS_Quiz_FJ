@@ -1,99 +1,102 @@
-# 04 Web APIs: Code Quiz
+        # Assignment 4: JS Quiz
 
-## Your Task
+## Description
 
-At some point in your journey to become a full-stack web developer, you’ll likely be asked to complete a coding assessment&mdash;perhaps as part of an interview process. A typical coding assessment includes both multiple-choice questions and interactive coding challenges. 
+- This project was created to as a way for bootcamp students to study the basics of JavaScript.
+- This project aims to provide bootcamp students with a series of questions which will test their knowledge of JavaScript, telling them which questions they got correct and which ones they got wrong.
+- Scores are then recorded and posted on a a locally stored leaderboard, allowing students to challenge themselves and try to beat either their own previous scores or other students on the same machine.
+- Working on this project helped me to become more familiar with the Document Object Model (DOM for short), as well as practice wha tI already knew about JS, HTML, and CSS. I found this project to be a bit more intimidating than some of the previous projects, but I am happy that I was able to get it done in the end.
 
-To help familiarize you with these tests and allow you to use the skills covered in this module, this Challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. 
+## Table of Contents (Optional)
 
-This week’s coursework will equip you with all the skills you need to succeed in this assignment.
+If your README is long, add a table of contents to make it easy for users to find what they need.
 
-## User Story
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Features](#features)
+- [Tests](#tests)
 
-```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
+## Usage
 
-## Acceptance Criteria
+Using the password generator is easy, simply open the page at (https://francisjung.github.io/Homework_3/) and click the generate password button. When pressed the browser will give you a variety of prompts which will help to describe your password. 
 
-```
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and my score
-```
+![Screenshot 1 of quiz](https://raw.githubusercontent.com/Francisjung/JS_Quiz_FJ/)
 
-## Mock-Up
+This password can be between 8 and 128 characters, and may include or exclude lower/ uppercase letters, numbers, and special characters. Please keep in mind that if all character types are excluded the password generator will not be able to run, so please pick at least one!
 
-The following animation demonstrates the application functionality:
+## Credits
 
-![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./Assets/04-web-apis-homework-demo.gif)
+This project was made partly in collaboration with my fellow student Kyle McClendon (https://github.com/KyleM021199), and with some help from the amazing tutorials and documentation at (https://w3schools.com).
 
-## Grading Requirements
+Thanks to their help I was able to save myself a sleepless night and a few cups of coffee, I couldn't be more grateful!
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+## License
 
-This Challenge is graded based on the following criteria: 
+MIT License
 
-### Technical Acceptance Criteria: 40%
+Copyright (c) [2023] [Francis Jung]
 
-* Satisfies all of the preceding acceptance criteria.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-### Deployment: 32%
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-* Application deployed at live URL.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-* Application loads with no errors.
+## Features
 
-* Application GitHub URL submitted.
+- Generates a randomized password between 8 and 128 characters in length.
+- Allows the user to include/ exclude lower and upper case characters, numbers, or special characters if they wish to do so.
+- Displays the generated password in the browser, allows the user to copy and paste the password.
 
-* GitHub repository contains application code.
+## Tests
 
-### Application Quality: 15%
+TC 01: Test for Valid User Input on Password Length
 
-* Application user experience is intuitive and easy to navigate.
+Test Steps:
 
-* Application user interface style is clean and polished.
+1. Navigate to the password generator at (https://Github.io/Francisjung/Homework_3).
+2. Click the Generate Password button.
+3. Enter an invalid input (<8, >128, or non numeric).
 
-* Application resembles the mock-up functionality provided in the Challenge instructions.
+Expected Result: 
 
-### Repository Quality: 13%
+The user recieves an alert which warns them that they must enter a valid input. Afterward the page will ask them for a new input.
 
-* Repository has a unique name.
+TC02: Test for Valid User Selection of Conditions
 
-* Repository follows best practices for file structure and naming conventions.
+Test Steps:
 
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+1. Navigate to the password generator at (https://Github.io/Francisjung/Homework_3).
+2. Click the Generate Password button.
+3. Enter an input that is >8 and <128
+4. Select the cancel option on each confirmation prompt.
 
-* Repository contains multiple descriptive commit messages.
+Expected Result: 
 
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
+The user recieves an alert which states that the password generator cannot generate a valid password if there are no legal character types.
 
-## Review
+TC03: Generate valid password
 
-You are required to submit BOTH of the following for review:
+Test Steps:
 
-* The URL of the functional, deployed application.
+1. Navigate to the password generator at (https://Github.io/Francisjung/Homework_3).
+2. Click the Generate Password button.
+3. Enter an input that is >8 and <128
+4. Select the confirm on at least one prompt.
 
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
+Expected Result:
 
----
-
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+After completing all 4 confirmation prompts the user will recieve a randomly generated password of their desired length, including their desired character type and excluding any non-desired character types.
