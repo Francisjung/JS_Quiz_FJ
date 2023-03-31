@@ -1,3 +1,10 @@
+/*
+Author: Francis Jung
+Date: 3/30/2023
+Assignement 4: JS Quiz
+*/
+
+//Declaring Instance variables
 var startBtn = document.querySelector("#start")
 var timerEl = document.querySelector("#timer")
 var answerList = document.querySelector("#answer-list")
@@ -146,7 +153,7 @@ document.querySelectorAll("ul#answer-list li").forEach((item) => {
 
 document.querySelector("#play-again").addEventListener("click", function(){playAgain()});
 
-
+//Checks if the selected answer is the same as the correct answer.
 function isCorrect(string){
     if(string == questionsArray[questionNumber-1].correctAnswer){
         console.log("true");
@@ -160,7 +167,8 @@ function isCorrect(string){
         return false;
     }
 }
-
+//Checks if the player is done with the quiz, if not displays the next question.
+//If all questions have been asked the timer is cleared and the next page is displayed.
 function nextQuestion(){
     questionNumber++;
     if(questionNumber<10){
@@ -172,11 +180,12 @@ function nextQuestion(){
             resultScreen();
     }
 }
-
+//Calculates the player's final score
 function calculateScore(){
     return numCorrect+ Math.floor(timerCount/10);
 }
-
+//Renders relevant information on the screen, showing the player their time, correct answers out of 10, then calculates the final score.
+//As well displays a button which will call a function to move to the next page.
 function resultScreen(){
     document.querySelector("#time-remaining").textContent = "Time Remaining: "+timerCount;
     document.querySelector("#num-correct").textContent = "Correct Answers: "+numCorrect+"/10";
@@ -192,6 +201,7 @@ document.querySelector("#page3-button").addEventListener("click", function(){
     showLeaderboards()
 });
 
+//Hides the results page and shows the leaderboards, then renders scores from local memory on page
 function showLeaderboards(){
     document.getElementById("page3").style.display = "none";
     document.getElementById("page4").style.display = "block";
@@ -204,6 +214,7 @@ function showLeaderboards(){
         document.querySelector("#highscores").appendChild(newP);
     }
 }
+//Resets the relevant values to their defaults and reinitializes the program
 function playAgain(){
     questionNumber = 1;
     timerCount = 60;
