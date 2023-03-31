@@ -5,7 +5,7 @@
 - This project was created to as a way for bootcamp students to study the basics of JavaScript.
 - This project aims to provide bootcamp students with a series of questions which will test their knowledge of JavaScript, telling them which questions they got correct and which ones they got wrong.
 - Scores are then recorded and posted on a a locally stored leaderboard, allowing students to challenge themselves and try to beat either their own previous scores or other students on the same machine.
-- Working on this project helped me to become more familiar with the Document Object Model (DOM for short), as well as practice wha tI already knew about JS, HTML, and CSS. I found this project to be a bit more intimidating than some of the previous projects, but I am happy that I was able to get it done in the end.
+- Working on this project helped me to become more familiar with the Document Object Model (DOM for short), as well as practice wha tI already knew about JS, HTML, and CSS. I found this project to be a bit more intimidating than some of the previous projects, but I am happy that I was able to get it done in the end. I was not able to complete the css to the degree I wanted to, but I will take this as a lesson in time management.
 
 ## Table of Contents (Optional)
 
@@ -15,15 +15,24 @@ If your README is long, add a table of contents to make it easy for users to fin
 - [Credits](#credits)
 - [License](#license)
 - [Features](#features)
-- [Tests](#tests)
 
 ## Usage
 
-Using the password generator is easy, simply open the page at (https://francisjung.github.io/Homework_3/) and click the generate password button. When pressed the browser will give you a variety of prompts which will help to describe your password. 
+To start the quiz, go to (https://francisjung.github.io/JS_Quiz_FJ/) and click the start quiz button. 
 
-![Screenshot 1 of quiz](https://raw.githubusercontent.com/Francisjung/JS_Quiz_FJ/)
+![Screenshot 1 of quiz](https://raw.githubusercontent.com/Francisjung/JS_Quiz_FJ/main/assets/h4-screenshot.PNG)
 
-This password can be between 8 and 128 characters, and may include or exclude lower/ uppercase letters, numbers, and special characters. Please keep in mind that if all character types are excluded the password generator will not be able to run, so please pick at least one!
+When pressed the browser will dispaly a question, 4 answers, a timer, and a question counter.
+
+![Screenshot 2 of quiz](https://raw.githubusercontent.com/Francisjung/JS_Quiz_FJ/main/assets/h4-screenshot-2.PNG)
+
+After all questions are answered or the timer has run out, the quiz will show the player thier results.
+
+![Screenshot 3 of quiz](https://raw.githubusercontent.com/Francisjung/JS_Quiz_FJ/main/assets/h4-screenshot-3.PNG)
+
+When the player enters their initials and presses the view leaderboard button, a table with high scores will be displayed.
+
+![Screenshot 4 of quiz](https://raw.githubusercontent.com/Francisjung/JS_Quiz_FJ/main/assets/h4-screenshot-4.PNG)
 
 ## Credits
 
@@ -57,46 +66,8 @@ SOFTWARE.
 
 ## Features
 
-- Generates a randomized password between 8 and 128 characters in length.
-- Allows the user to include/ exclude lower and upper case characters, numbers, or special characters if they wish to do so.
-- Displays the generated password in the browser, allows the user to copy and paste the password.
-
-## Tests
-
-TC 01: Test for Valid User Input on Password Length
-
-Test Steps:
-
-1. Navigate to the password generator at (https://Github.io/Francisjung/Homework_3).
-2. Click the Generate Password button.
-3. Enter an invalid input (<8, >128, or non numeric).
-
-Expected Result: 
-
-The user recieves an alert which warns them that they must enter a valid input. Afterward the page will ask them for a new input.
-
-TC02: Test for Valid User Selection of Conditions
-
-Test Steps:
-
-1. Navigate to the password generator at (https://Github.io/Francisjung/Homework_3).
-2. Click the Generate Password button.
-3. Enter an input that is >8 and <128
-4. Select the cancel option on each confirmation prompt.
-
-Expected Result: 
-
-The user recieves an alert which states that the password generator cannot generate a valid password if there are no legal character types.
-
-TC03: Generate valid password
-
-Test Steps:
-
-1. Navigate to the password generator at (https://Github.io/Francisjung/Homework_3).
-2. Click the Generate Password button.
-3. Enter an input that is >8 and <128
-4. Select the confirm on at least one prompt.
-
-Expected Result:
-
-After completing all 4 confirmation prompts the user will recieve a randomly generated password of their desired length, including their desired character type and excluding any non-desired character types.
+- Diplays 10 questions with 4 potential answers.
+- tracks correct answers and how much time the player has left out of 60 seconds.
+- On an incorrect answer 10 seconds will be subtracted from the timer.
+- when the timer hits 0 or all 10 questions, the player's score will be displayed and they are able to enter thier initials.
+- A leaderbaord will be displayed after the button is pressed, then a button is displayed which allows them to play again.
